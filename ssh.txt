@@ -1,0 +1,16 @@
+################## WINDOWS
+Putty
+#############################################################
+=> génération de la clé publique et privée avec puttygen.
+Enregistrer les deux clés.
+################# Linux
+mkdir .ssh
+cd ~/.ssh
+touch authorized_keys
+=> coller la clé publique
+
+ROOT :
+Création d'un fichier hardening.conf au lieu d'utiliser le fichier sshd_config=> cd /etc/ssh/sshd_config.d/hardening.conf
+=> PermitRootLogin no
+=> PubkeyAuthentication yes
+sudo systemctl reload sshd
